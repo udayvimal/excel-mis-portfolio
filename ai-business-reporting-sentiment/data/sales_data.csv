@@ -1,0 +1,201 @@
+date,product,category,price,discount_pct,units_sold,revenue
+2026-06-16,Omega-3 Fish Oil 90 Caps,Nutrition,620.0,10,93,51894.0
+2026-06-17,Whey Protein Shake 1kg,Nutrition,1361.0,0,84,114324.0
+2026-04-19,Yoga Mat Premium 6mm,Fitness,1154.0,20,92,84934.4
+2026-04-10,Rose Water Toner 150ml,Beauty,364.0,10,55,18018.0
+2026-04-15,Rose Water Toner 150ml,Beauty,347.0,25,78,20299.5
+2026-05-15,Glow Face Serum 30ml,Beauty,1434.0,15,29,35348.1
+2026-04-08,Omega-3 Fish Oil 90 Caps,Nutrition,614.0,15,99,51668.1
+2026-04-22,Vitamin C Effervescent 60ct,Nutrition,415.0,40,44,10956.0
+2026-04-24,Sleep Gummies Melatonin 60ct,Wellness,497.0,0,94,46718.0
+2026-05-11,Collagen Powder 300g,Nutrition,1017.0,0,8,8136.0
+2026-04-02,Whey Protein Shake 1kg,Nutrition,1276.0,40,90,68904.0
+2026-04-04,Vitamin C Effervescent 60ct,Nutrition,387.0,10,46,16021.8
+2026-05-14,Natural Body Lotion 200ml,Beauty,485.0,10,18,7857.0
+2026-05-05,Rose Water Toner 150ml,Beauty,361.0,10,81,26316.9
+2026-04-29,Whey Protein Shake 1kg,Nutrition,1342.0,10,84,101455.2
+2026-05-16,Natural Body Lotion 200ml,Beauty,488.0,10,97,42602.4
+2026-06-03,Sleep Gummies Melatonin 60ct,Wellness,484.0,0,82,39688.0
+2026-04-13,Rose Water Toner 150ml,Beauty,355.0,20,3,852.0
+2026-05-13,Bamboo Diffuser + 2 Oils,Wellness,846.0,20,85,57528.0
+2026-05-10,Yoga Mat Premium 6mm,Fitness,1153.0,0,69,79557.0
+2026-05-16,Whey Protein Shake 1kg,Nutrition,1307.0,10,81,95280.3
+2026-06-17,Hydrating Lip Balm SPF30,Beauty,250.0,15,92,19550.0
+2026-06-16,Sleep Gummies Melatonin 60ct,Wellness,476.0,10,68,29131.2
+2026-05-24,Adjustable Dumbbells 10kg Pair,Fitness,2476.0,5,54,127018.8
+2026-03-27,Yoga Mat Premium 6mm,Fitness,1146.0,5,102,111047.4
+2026-04-08,Glow Face Serum 30ml,Beauty,1523.0,5,35,50639.75
+2026-06-13,Natural Body Lotion 200ml,Beauty,507.0,20,68,27580.8
+2026-05-19,Adjustable Dumbbells 10kg Pair,Fitness,2416.0,25,50,90600.0
+2026-05-25,Omega-3 Fish Oil 90 Caps,Nutrition,612.0,0,5,3060.0
+2026-04-23,Vitamin C Effervescent 60ct,Nutrition,399.0,0,57,22743.0
+2026-04-01,Lavender Essential Oil 15ml,Wellness,596.0,20,20,9536.0
+2026-06-10,Omega-3 Fish Oil 90 Caps,Nutrition,607.0,10,47,25676.1
+2026-05-01,Foam Roller Deep Tissue,Fitness,672.0,0,45,30240.0
+2026-05-25,Foam Roller Deep Tissue,Fitness,713.0,30,115,57396.5
+2026-05-14,Yoga Mat Premium 6mm,Fitness,1232.0,40,34,25132.8
+2026-06-01,Collagen Powder 300g,Nutrition,976.0,10,86,75542.4
+2026-06-17,Bamboo Diffuser + 2 Oils,Wellness,845.0,30,14,8281.0
+2026-04-22,Omega-3 Fish Oil 90 Caps,Nutrition,604.0,10,26,14133.6
+2026-05-06,Lavender Essential Oil 15ml,Wellness,614.0,25,23,10591.5
+2026-05-11,Vitamin C Effervescent 60ct,Nutrition,404.0,10,87,31633.2
+2026-06-12,Resistance Bands Set 5-pack,Fitness,766.0,15,71,46228.1
+2026-04-17,Foam Roller Deep Tissue,Fitness,699.0,0,51,35649.0
+2026-06-08,Natural Body Lotion 200ml,Beauty,479.0,0,41,19639.0
+2026-06-09,Vitamin C Effervescent 60ct,Nutrition,416.0,0,71,29536.0
+2026-03-27,Collagen Powder 300g,Nutrition,1008.0,10,70,63504.0
+2026-05-29,Rose Water Toner 150ml,Beauty,348.0,40,5,1044.0
+2026-05-13,Resistance Bands Set 5-pack,Fitness,798.0,0,94,75012.0
+2026-04-25,Vitamin C Effervescent 60ct,Nutrition,402.0,30,60,16884.0
+2026-05-07,Rose Water Toner 150ml,Beauty,343.0,5,58,18899.3
+2026-05-06,Omega-3 Fish Oil 90 Caps,Nutrition,570.0,10,63,32319.0
+2026-05-23,Lavender Essential Oil 15ml,Wellness,577.0,30,99,39986.1
+2026-05-28,Yoga Mat Premium 6mm,Fitness,1220.0,0,67,81740.0
+2026-06-14,Bamboo Diffuser + 2 Oils,Wellness,868.0,20,35,24304.0
+2026-04-01,Foam Roller Deep Tissue,Fitness,728.0,0,92,66976.0
+2026-03-29,Hydrating Lip Balm SPF30,Beauty,250.0,0,29,7250.0
+2026-05-06,Foam Roller Deep Tissue,Fitness,721.0,25,46,24874.5
+2026-03-30,Foam Roller Deep Tissue,Fitness,684.0,40,40,16416.0
+2026-04-30,Natural Body Lotion 200ml,Beauty,521.0,5,63,31181.85
+2026-06-08,Yoga Mat Premium 6mm,Fitness,1191.0,0,22,26202.0
+2026-03-29,Vitamin C Effervescent 60ct,Nutrition,409.0,30,119,34069.7
+2026-04-09,Hydrating Lip Balm SPF30,Beauty,249.0,30,107,18650.1
+2026-05-13,Rose Water Toner 150ml,Beauty,355.0,20,39,11076.0
+2026-05-19,Hydrating Lip Balm SPF30,Beauty,255.0,0,46,11730.0
+2026-05-21,Bamboo Diffuser + 2 Oils,Wellness,827.0,30,33,19103.7
+2026-06-22,Lavender Essential Oil 15ml,Wellness,578.0,25,17,7369.5
+2026-04-18,Yoga Mat Premium 6mm,Fitness,1244.0,15,23,24320.2
+2026-06-20,Rose Water Toner 150ml,Beauty,359.0,10,25,8077.5
+2026-05-27,Adjustable Dumbbells 10kg Pair,Fitness,2410.0,15,116,237626.0
+2026-04-01,Collagen Powder 300g,Nutrition,962.0,5,4,3655.6
+2026-06-23,Rose Water Toner 150ml,Beauty,349.0,0,82,28618.0
+2026-04-02,Collagen Powder 300g,Nutrition,969.0,15,84,69186.6
+2026-04-08,Adjustable Dumbbells 10kg Pair,Fitness,2559.0,20,97,198578.4
+2026-04-11,Lavender Essential Oil 15ml,Wellness,625.0,0,18,11250.0
+2026-06-17,Yoga Mat Premium 6mm,Fitness,1198.0,10,49,52831.8
+2026-05-10,Vitamin C Effervescent 60ct,Nutrition,390.0,40,80,18720.0
+2026-03-30,Natural Body Lotion 200ml,Beauty,502.0,0,111,55722.0
+2026-06-11,Adjustable Dumbbells 10kg Pair,Fitness,2409.0,0,77,185493.0
+2026-04-18,Natural Body Lotion 200ml,Beauty,504.0,40,52,15724.8
+2026-06-08,Herbal Immunity Kadha 500ml,Wellness,298.0,25,112,25032.0
+2026-04-28,Lavender Essential Oil 15ml,Wellness,576.0,0,94,54144.0
+2026-05-30,Bamboo Diffuser + 2 Oils,Wellness,826.0,20,100,66080.0
+2026-05-25,Glow Face Serum 30ml,Beauty,1554.0,15,65,85858.5
+2026-04-18,Yoga Mat Premium 6mm,Fitness,1184.0,10,73,77788.8
+2026-04-02,Glow Face Serum 30ml,Beauty,1554.0,20,52,64646.4
+2026-05-31,Rose Water Toner 150ml,Beauty,340.0,5,56,18088.0
+2026-03-27,Yoga Mat Premium 6mm,Fitness,1152.0,25,90,77760.0
+2026-04-06,Sleep Gummies Melatonin 60ct,Wellness,481.0,15,10,4088.5
+2026-06-07,Lavender Essential Oil 15ml,Wellness,578.0,10,99,51499.8
+2026-04-03,Foam Roller Deep Tissue,Fitness,684.0,0,110,75240.0
+2026-05-04,Rose Water Toner 150ml,Beauty,332.0,0,20,6640.0
+2026-04-22,Glow Face Serum 30ml,Beauty,1432.0,0,9,12888.0
+2026-05-17,Herbal Immunity Kadha 500ml,Wellness,296.0,20,72,17049.6
+2026-04-11,Vitamin C Effervescent 60ct,Nutrition,414.0,15,40,14076.0
+2026-04-14,Collagen Powder 300g,Nutrition,967.0,0,102,98634.0
+2026-04-05,Omega-3 Fish Oil 90 Caps,Nutrition,603.0,5,30,17185.5
+2026-03-31,Glow Face Serum 30ml,Beauty,1480.0,0,51,75480.0
+2026-04-02,Hydrating Lip Balm SPF30,Beauty,257.0,0,64,16448.0
+2026-06-15,Sleep Gummies Melatonin 60ct,Wellness,479.0,30,9,3017.7
+2026-04-10,Vitamin C Effervescent 60ct,Nutrition,418.0,30,101,29552.6
+2026-05-27,Lavender Essential Oil 15ml,Wellness,608.0,20,96,46694.4
+2026-04-30,Lavender Essential Oil 15ml,Wellness,601.0,0,94,56494.0
+2026-05-26,Bamboo Diffuser + 2 Oils,Wellness,846.0,25,63,39973.5
+2026-04-15,Yoga Mat Premium 6mm,Fitness,1171.0,15,48,47776.8
+2026-06-19,Whey Protein Shake 1kg,Nutrition,1288.0,10,19,22024.8
+2026-05-01,Omega-3 Fish Oil 90 Caps,Nutrition,591.0,10,30,15957.0
+2026-04-19,Yoga Mat Premium 6mm,Fitness,1221.0,10,41,45054.9
+2026-06-03,Adjustable Dumbbells 10kg Pair,Fitness,2603.0,30,37,67417.7
+2026-04-09,Omega-3 Fish Oil 90 Caps,Nutrition,601.0,10,59,31913.1
+2026-03-30,Resistance Bands Set 5-pack,Fitness,823.0,20,102,67156.8
+2026-05-06,Sleep Gummies Melatonin 60ct,Wellness,488.0,15,65,26962.0
+2026-06-09,Hydrating Lip Balm SPF30,Beauty,254.0,5,88,21234.4
+2026-05-10,Bamboo Diffuser + 2 Oils,Wellness,859.0,0,103,88477.0
+2026-04-28,Whey Protein Shake 1kg,Nutrition,1245.0,20,14,13944.0
+2026-05-08,Yoga Mat Premium 6mm,Fitness,1254.0,0,112,140448.0
+2026-06-09,Hydrating Lip Balm SPF30,Beauty,256.0,15,96,20889.6
+2026-03-27,Omega-3 Fish Oil 90 Caps,Nutrition,584.0,30,96,39244.8
+2026-04-21,Resistance Bands Set 5-pack,Fitness,808.0,0,72,58176.0
+2026-06-09,Natural Body Lotion 200ml,Beauty,503.0,15,23,9833.65
+2026-05-13,Glow Face Serum 30ml,Beauty,1539.0,15,57,74564.55
+2026-04-03,Foam Roller Deep Tissue,Fitness,706.0,10,96,60998.4
+2026-06-12,Hydrating Lip Balm SPF30,Beauty,239.0,0,111,26529.0
+2026-04-21,Whey Protein Shake 1kg,Nutrition,1288.0,20,13,13395.2
+2026-04-03,Adjustable Dumbbells 10kg Pair,Fitness,2457.0,20,93,182800.8
+2026-04-19,Herbal Immunity Kadha 500ml,Wellness,292.0,20,108,25228.8
+2026-04-14,Whey Protein Shake 1kg,Nutrition,1255.0,10,45,50827.5
+2026-03-30,Omega-3 Fish Oil 90 Caps,Nutrition,595.0,30,20,8330.0
+2026-04-19,Foam Roller Deep Tissue,Fitness,703.0,20,47,26432.8
+2026-03-31,Resistance Bands Set 5-pack,Fitness,797.0,20,112,71411.2
+2026-06-12,Rose Water Toner 150ml,Beauty,357.0,40,47,10067.4
+2026-04-09,Collagen Powder 300g,Nutrition,1034.0,0,114,117876.0
+2026-04-06,Rose Water Toner 150ml,Beauty,352.0,0,77,27104.0
+2026-06-22,Vitamin C Effervescent 60ct,Nutrition,397.0,0,83,32951.0
+2026-04-20,Vitamin C Effervescent 60ct,Nutrition,397.0,5,99,37337.85
+2026-05-27,Herbal Immunity Kadha 500ml,Wellness,312.0,10,54,15163.2
+2026-04-19,Vitamin C Effervescent 60ct,Nutrition,419.0,0,94,39386.0
+2026-06-21,Glow Face Serum 30ml,Beauty,1550.0,5,105,154612.5
+2026-06-21,Glow Face Serum 30ml,Beauty,1524.0,40,15,13716.0
+2026-06-12,Herbal Immunity Kadha 500ml,Wellness,311.0,0,79,24569.0
+2026-04-08,Hydrating Lip Balm SPF30,Beauty,240.0,5,6,1368.0
+2026-04-09,Yoga Mat Premium 6mm,Fitness,1248.0,0,93,116064.0
+2026-05-29,Sleep Gummies Melatonin 60ct,Wellness,474.0,0,79,37446.0
+2026-06-10,Natural Body Lotion 200ml,Beauty,514.0,15,9,3932.1
+2026-03-30,Natural Body Lotion 200ml,Beauty,477.0,25,30,10732.5
+2026-04-25,Resistance Bands Set 5-pack,Fitness,821.0,30,96,55171.2
+2026-04-09,Lavender Essential Oil 15ml,Wellness,571.0,25,84,35973.0
+2026-05-14,Foam Roller Deep Tissue,Fitness,699.0,0,26,18174.0
+2026-05-07,Bamboo Diffuser + 2 Oils,Wellness,879.0,15,90,67243.5
+2026-05-15,Bamboo Diffuser + 2 Oils,Wellness,823.0,20,21,13826.4
+2026-06-23,Omega-3 Fish Oil 90 Caps,Nutrition,628.0,20,34,17081.6
+2026-04-18,Rose Water Toner 150ml,Beauty,353.0,0,74,26122.0
+2026-06-24,Rose Water Toner 150ml,Beauty,356.0,30,7,1744.4
+2026-05-18,Vitamin C Effervescent 60ct,Nutrition,386.0,0,23,8878.0
+2026-05-22,Adjustable Dumbbells 10kg Pair,Fitness,2570.0,10,117,270621.0
+2026-06-02,Whey Protein Shake 1kg,Nutrition,1253.0,15,77,82008.85
+2026-06-02,Rose Water Toner 150ml,Beauty,352.0,10,113,35798.4
+2026-05-07,Rose Water Toner 150ml,Beauty,364.0,15,84,25989.6
+2026-06-10,Whey Protein Shake 1kg,Nutrition,1287.0,15,20,21879.0
+2026-04-03,Vitamin C Effervescent 60ct,Nutrition,384.0,0,58,22272.0
+2026-03-31,Collagen Powder 300g,Nutrition,992.0,10,35,31248.0
+2026-04-15,Rose Water Toner 150ml,Beauty,346.0,15,74,21763.4
+2026-06-11,Vitamin C Effervescent 60ct,Nutrition,403.0,5,50,19142.5
+2026-05-01,Collagen Powder 300g,Nutrition,991.0,0,40,39640.0
+2026-05-13,Adjustable Dumbbells 10kg Pair,Fitness,2517.0,5,58,138686.7
+2026-05-24,Vitamin C Effervescent 60ct,Nutrition,405.0,20,69,22356.0
+2026-05-03,Rose Water Toner 150ml,Beauty,359.0,10,79,25524.9
+2026-05-25,Yoga Mat Premium 6mm,Fitness,1214.0,10,67,73204.2
+2026-05-08,Herbal Immunity Kadha 500ml,Wellness,306.0,15,45,11704.5
+2026-05-05,Natural Body Lotion 200ml,Beauty,499.0,30,106,37025.8
+2026-04-19,Glow Face Serum 30ml,Beauty,1471.0,20,63,74138.4
+2026-05-09,Herbal Immunity Kadha 500ml,Wellness,288.0,10,100,25920.0
+2026-06-19,Rose Water Toner 150ml,Beauty,333.0,25,11,2747.25
+2026-06-18,Herbal Immunity Kadha 500ml,Wellness,289.0,10,35,9103.5
+2026-04-20,Sleep Gummies Melatonin 60ct,Wellness,475.0,20,39,14820.0
+2026-05-16,Natural Body Lotion 200ml,Beauty,493.0,25,99,36605.25
+2026-04-22,Omega-3 Fish Oil 90 Caps,Nutrition,576.0,15,20,9792.0
+2026-05-10,Omega-3 Fish Oil 90 Caps,Nutrition,629.0,40,45,16983.0
+2026-05-15,Sleep Gummies Melatonin 60ct,Wellness,508.0,10,93,42519.6
+2026-06-12,Foam Roller Deep Tissue,Fitness,709.0,10,85,54238.5
+2026-05-25,Sleep Gummies Melatonin 60ct,Wellness,500.0,5,4,1900.0
+2026-05-13,Sleep Gummies Melatonin 60ct,Wellness,516.0,0,22,11352.0
+2026-04-03,Bamboo Diffuser + 2 Oils,Wellness,878.0,15,118,88063.4
+2026-04-13,Collagen Powder 300g,Nutrition,994.0,0,118,117292.0
+2026-04-10,Omega-3 Fish Oil 90 Caps,Nutrition,614.0,0,48,29472.0
+2026-06-21,Collagen Powder 300g,Nutrition,964.0,10,53,45982.8
+2026-05-28,Lavender Essential Oil 15ml,Wellness,572.0,30,24,9609.6
+2026-04-29,Adjustable Dumbbells 10kg Pair,Fitness,2497.0,5,30,71164.5
+2026-03-27,Omega-3 Fish Oil 90 Caps,Nutrition,574.0,10,71,36678.6
+2026-05-31,Rose Water Toner 150ml,Beauty,354.0,25,31,8230.5
+2026-05-05,Natural Body Lotion 200ml,Beauty,512.0,20,78,31948.8
+2026-04-30,Natural Body Lotion 200ml,Beauty,501.0,10,9,4058.1
+2026-04-06,Bamboo Diffuser + 2 Oils,Wellness,848.0,25,42,26712.0
+2026-05-08,Glow Face Serum 30ml,Beauty,1500.0,25,92,103500.0
+2026-05-17,Sleep Gummies Melatonin 60ct,Wellness,516.0,15,109,47807.4
+2026-05-21,Hydrating Lip Balm SPF30,Beauty,250.0,10,42,9450.0
+2026-05-09,Yoga Mat Premium 6mm,Fitness,1249.0,10,15,16861.5
+2026-04-29,Bamboo Diffuser + 2 Oils,Wellness,835.0,0,76,63460.0
+2026-05-27,Rose Water Toner 150ml,Beauty,364.0,0,25,9100.0
+2026-04-23,Vitamin C Effervescent 60ct,Nutrition,403.0,10,55,19948.5
+2026-05-05,Bamboo Diffuser + 2 Oils,Wellness,866.0,5,3,2468.1
+2026-05-08,Omega-3 Fish Oil 90 Caps,Nutrition,606.0,40,77,27997.2

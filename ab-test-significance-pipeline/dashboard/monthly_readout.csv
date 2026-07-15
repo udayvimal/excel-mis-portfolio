@@ -1,0 +1,4 @@
+month,n_experiments,n_significant,n_positive_lift,n_negative_effect,n_no_effect,win_rate_pct
+2025-10,10,9,8,1,1,80.0
+2025-11,10,10,8,2,0,80.0
+2025-12,10,9,7,2,1,70.0

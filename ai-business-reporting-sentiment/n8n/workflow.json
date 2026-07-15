@@ -1,0 +1,205 @@
+{
+  "name": "AI Business Reporting & Sentiment Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1,
+              "triggerAtDay": [1],
+              "triggerAtHour": 9,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "node-schedule",
+      "name": "Every Monday 9am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "=data/sales_data.csv"
+      },
+      "id": "node-read-sales",
+      "name": "Read sales_data.csv",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [460, 200]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "=data/reviews.csv"
+      },
+      "id": "node-read-reviews",
+      "name": "Read reviews.csv",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [460, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse CSV and compute sales metrics\nconst rows = $input.first().binary.data.toString('utf8')\n  .trim().split('\\n').slice(1)\n  .map(r => r.split(','));\n\nlet totalRevenue = 0, totalUnits = 0, catRevenue = {};\nfor (const [date, product, category, price, discount, units, revenue] of rows) {\n  totalRevenue += parseFloat(revenue) || 0;\n  totalUnits   += parseInt(units) || 0;\n  catRevenue[category] = (catRevenue[category] || 0) + (parseFloat(revenue) || 0);\n}\n\nconst topCategory = Object.entries(catRevenue).sort((a,b)=>b[1]-a[1])[0];\n\nreturn [{\n  json: {\n    total_revenue: totalRevenue.toFixed(2),\n    total_units:   totalUnits,\n    top_category:  topCategory[0],\n    top_cat_revenue: topCategory[1].toFixed(2),\n    category_breakdown: catRevenue,\n    metrics_text: `Total Revenue: INR ${totalRevenue.toFixed(0)}\\nUnits Sold: ${totalUnits}\\nTop Category: ${topCategory[0]} (INR ${topCategory[1].toFixed(0)})`\n  }\n}];"
+      },
+      "id": "node-compute-metrics",
+      "name": "Compute Sales Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse reviews CSV and build batch sentiment input\nconst rows = $input.first().binary.data.toString('utf8')\n  .trim().split('\\n').slice(1)\n  .map(r => {\n    const parts = r.split(',');\n    return { id: parts[0], product: parts[1], text: parts.slice(3).join(',') };\n  });\n\nconst reviewsForPrompt = rows\n  .map(r => `${r.id}. [${r.product}] ${r.text}`).join('\\n');\n\nreturn [{ json: { reviews: rows, prompt_input: reviewsForPrompt } }];"
+      },
+      "id": "node-parse-reviews",
+      "name": "Parse Reviews",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "authentication": "apiKey",
+        "resource": "chat",
+        "operation": "message",
+        "model": "llama-3.3-70b-versatile",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "=You are a senior D2C business analyst. Given these sales metrics, write a 150-word executive summary and 3 actionable business insights with bold headings.\n\nMETRICS:\n{{ $json.metrics_text }}\n\nFormat:\n## Executive Summary\n[summary]\n\n## 3 Actionable Business Insights\n[insights]"
+            }
+          ]
+        }
+      },
+      "id": "node-llm-report",
+      "name": "LLM: Generate Business Report",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.4,
+      "position": [900, 200],
+      "credentials": {
+        "openAiApi": {
+          "id": "groq-credential",
+          "name": "Groq API (OpenAI-compatible)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "apiKey",
+        "resource": "chat",
+        "operation": "message",
+        "model": "llama-3.3-70b-versatile",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "=Classify each review below. Output one line per review: <id>|<positive/negative/neutral>|<theme>\n\nREVIEWS:\n{{ $json.prompt_input }}"
+            }
+          ]
+        }
+      },
+      "id": "node-llm-sentiment",
+      "name": "LLM: Classify Sentiment",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.4,
+      "position": [900, 400],
+      "credentials": {
+        "openAiApi": {
+          "id": "groq-credential",
+          "name": "Groq API (OpenAI-compatible)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const reportContent = $input.first().json.choices[0].message.content;\nconst metricsNode = $('Compute Sales Metrics').first().json;\n\nconst fullReport = `# AI Business Report\\n**Generated:** ${new Date().toISOString().split('T')[0]}\\n\\n## Key Metrics\\n- Total Revenue: INR ${metricsNode.total_revenue}\\n- Units Sold: ${metricsNode.total_units}\\n- Top Category: ${metricsNode.top_category}\\n\\n---\\n\\n${reportContent}\\n`;\n\nreturn [{ json: { report: fullReport, filename: 'business_report.md' } }];"
+      },
+      "id": "node-format-report",
+      "name": "Format Business Report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.choices[0].message.content;\nconst lines = raw.trim().split('\\n').filter(l => l.includes('|'));\n\nlet pos=0, neg=0, neu=0;\nfor (const line of lines) {\n  const parts = line.split('|');\n  if (parts[1]) {\n    const s = parts[1].trim().toLowerCase();\n    if (s === 'positive') pos++;\n    else if (s === 'negative') neg++;\n    else neu++;\n  }\n}\nconst total = pos+neg+neu;\n\nconst summary = `# Sentiment Report\\n**Generated:** ${new Date().toISOString().split('T')[0]}\\n\\n## Breakdown\\n- Positive: ${pos} (${(pos/total*100).toFixed(1)}%)\\n- Negative: ${neg} (${(neg/total*100).toFixed(1)}%)\\n- Neutral: ${neu} (${(neu/total*100).toFixed(1)}%)\\n`;\n\nreturn [{ json: { report: summary, filename: 'sentiment_report.md', pos, neg, neu } }];"
+      },
+      "id": "node-aggregate-sentiment",
+      "name": "Aggregate Sentiment",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 400]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.filename }}",
+        "dataPropertyName": "report"
+      },
+      "id": "node-save-report",
+      "name": "Save business_report.md",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.filename }}",
+        "dataPropertyName": "report"
+      },
+      "id": "node-save-sentiment",
+      "name": "Save sentiment_report.md",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1340, 400]
+    }
+  ],
+  "connections": {
+    "Every Monday 9am": {
+      "main": [
+        [
+          { "node": "Read sales_data.csv", "type": "main", "index": 0 },
+          { "node": "Read reviews.csv",    "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Read sales_data.csv": {
+      "main": [[{ "node": "Compute Sales Metrics",     "type": "main", "index": 0 }]]
+    },
+    "Read reviews.csv": {
+      "main": [[{ "node": "Parse Reviews",              "type": "main", "index": 0 }]]
+    },
+    "Compute Sales Metrics": {
+      "main": [[{ "node": "LLM: Generate Business Report", "type": "main", "index": 0 }]]
+    },
+    "Parse Reviews": {
+      "main": [[{ "node": "LLM: Classify Sentiment",   "type": "main", "index": 0 }]]
+    },
+    "LLM: Generate Business Report": {
+      "main": [[{ "node": "Format Business Report",    "type": "main", "index": 0 }]]
+    },
+    "LLM: Classify Sentiment": {
+      "main": [[{ "node": "Aggregate Sentiment",       "type": "main", "index": 0 }]]
+    },
+    "Format Business Report": {
+      "main": [[{ "node": "Save business_report.md",   "type": "main", "index": 0 }]]
+    },
+    "Aggregate Sentiment": {
+      "main": [[{ "node": "Save sentiment_report.md",  "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "templateId": "ai-business-reporting-sentiment",
+    "description": "Weekly AI-powered business report + sentiment analysis from CSV data using Groq LLM"
+  }
+}

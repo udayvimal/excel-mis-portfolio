@@ -1,0 +1,182 @@
+
+// ════════════════════════════════════════════════════════════════════════
+// ADVISOR INCENTIVE PERFORMANCE — DAX MEASURES
+// Data Model: Star schema — performance_fact linked to advisor_dim,
+//             advisor_dim linked to tl_dim, tl_dim linked to am_dim,
+//             performance_fact linked to date_dim via Month_Year
+// ════════════════════════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 1: Consolidated Incentive Score (%)
+// Weighted achievement across all 5 programs
+// Retention 30% | Migration 15% | Rider 20% | CI 20% | Referrals 15%
+// ─────────────────────────────────────────────────────────────────────
+Consolidated Incentive Score (%) =
+VAR RetPct =
+    DIVIDE(
+        SUM(performance_fact[Retention_Achieved]),
+        SUM(performance_fact[Retention_Target]),
+        0
+    )
+VAR MigPct =
+    DIVIDE(
+        SUM(performance_fact[Migration_Achieved]),
+        SUM(performance_fact[Migration_Target]),
+        0
+    )
+VAR RidPct =
+    DIVIDE(
+        SUM(performance_fact[Rider_Achieved]),
+        SUM(performance_fact[Rider_Target]),
+        0
+    )
+VAR CIPct =
+    DIVIDE(
+        SUM(performance_fact[CI_Achieved]),
+        SUM(performance_fact[CI_Target]),
+        0
+    )
+VAR RefPct =
+    DIVIDE(
+        SUM(performance_fact[Referral_Achieved]),
+        SUM(performance_fact[Referral_Target]),
+        0
+    )
+RETURN
+    ROUND(
+        (RetPct * 0.30) +
+        (MigPct * 0.15) +
+        (RidPct * 0.20) +
+        (CIPct  * 0.20) +
+        (RefPct * 0.15),
+        4
+    ) * 100
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 2: Retention Achievement %
+// ─────────────────────────────────────────────────────────────────────
+Retention Achievement % =
+DIVIDE(
+    SUM(performance_fact[Retention_Achieved]),
+    SUM(performance_fact[Retention_Target]),
+    0
+) * 100
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 3: Rider Attachment Achievement %
+// ─────────────────────────────────────────────────────────────────────
+Rider Attachment % =
+DIVIDE(
+    SUM(performance_fact[Rider_Achieved]),
+    SUM(performance_fact[Rider_Target]),
+    0
+) * 100
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 4: CI Attachment Achievement %
+// ─────────────────────────────────────────────────────────────────────
+CI Attachment % =
+DIVIDE(
+    SUM(performance_fact[CI_Achieved]),
+    SUM(performance_fact[CI_Target]),
+    0
+) * 100
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 5: Month-over-Month Change in Consolidated Score
+// Uses DATEADD time intelligence — requires date_dim date table
+// ─────────────────────────────────────────────────────────────────────
+Consolidated Score MoM Change =
+VAR CurrentScore =
+    [Consolidated Incentive Score (%)]
+VAR PreviousMonthScore =
+    CALCULATE(
+        [Consolidated Incentive Score (%)],
+        DATEADD(date_dim[Date], -1, MONTH)
+    )
+RETURN
+    IF(
+        NOT ISBLANK(PreviousMonthScore) && PreviousMonthScore <> 0,
+        DIVIDE(CurrentScore - PreviousMonthScore, PreviousMonthScore, BLANK()),
+        BLANK()
+    )
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 6: TL-Level Average Consolidated Score
+// Rolls up to Team Lead level via advisor_dim relationship
+// ─────────────────────────────────────────────────────────────────────
+TL Avg Consolidated Score =
+AVERAGEX(
+    SUMMARIZE(
+        advisor_dim,
+        advisor_dim[TL_ID],
+        advisor_dim[TL_Name]
+    ),
+    CALCULATE( [Consolidated Incentive Score (%)] )
+)
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 7: AM-Level Average Consolidated Score
+// Rolls up through tl_dim to area manager
+// ─────────────────────────────────────────────────────────────────────
+AM Avg Consolidated Score =
+AVERAGEX(
+    SUMMARIZE(
+        am_dim,
+        am_dim[AM_ID],
+        am_dim[AM_Name]
+    ),
+    CALCULATE( [Consolidated Incentive Score (%)] )
+)
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 8: Total Incentive Amount Paid
+// ─────────────────────────────────────────────────────────────────────
+Total Incentive Paid =
+SUM(performance_fact[Incentive_Amount])
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 9: % Advisors at Platinum
+// ─────────────────────────────────────────────────────────────────────
+% Advisors at Platinum =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(performance_fact),
+        performance_fact[Incentive_Slab] = "Platinum"
+    ),
+    COUNTROWS(performance_fact),
+    0
+) * 100
+
+
+// ─────────────────────────────────────────────────────────────────────
+// MEASURE 10: Incentive Variance vs Prior Month (INR)
+// ─────────────────────────────────────────────────────────────────────
+Incentive Amount MoM Variance =
+VAR CurrAmt =
+    SUM(performance_fact[Incentive_Amount])
+VAR PrevAmt =
+    CALCULATE(
+        SUM(performance_fact[Incentive_Amount]),
+        DATEADD(date_dim[Date], -1, MONTH)
+    )
+RETURN
+    IF(NOT ISBLANK(PrevAmt), CurrAmt - PrevAmt, BLANK())
+
+
+// ─────────────────────────────────────────────────────────────────────
+// RELATIONSHIPS (define in Power BI Model view):
+//   performance_fact[Advisor_ID]  → advisor_dim[Advisor_ID]   (Many-to-One)
+//   advisor_dim[TL_ID]            → tl_dim[TL_ID]             (Many-to-One)
+//   tl_dim[AM_ID]                 → am_dim[AM_ID]             (Many-to-One)
+//   performance_fact[Month_Year]  → date_dim[Month_Year]      (Many-to-One)
+//   Mark date_dim as "Date Table" using the [Date] column
+// ─────────────────────────────────────────────────────────────────────

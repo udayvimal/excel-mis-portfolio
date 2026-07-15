@@ -4,6 +4,43 @@
 
 ---
 
+## Repository Index
+
+All 14 projects are included as subdirectories — full source code, data, Excel workbooks, and charts.
+
+### Excel & MIS Dashboards
+| Folder | Description |
+|--------|-------------|
+| [advanced-excel-reporting-framework/](advanced-excel-reporting-framework/) | XLOOKUP, nested IF, SUMIFS — 4,961-ticket ops dashboard with SLA monitoring |
+| [content-moderation-mis-dashboard/](content-moderation-mis-dashboard/) | 14,400-row Trust & Safety MIS — 20 moderators, 8 categories, SLA trend |
+| [aml-transaction-monitoring-mis/](aml-transaction-monitoring-mis/) | AML compliance MIS — 1,734 txns, multi-source XLOOKUP joins, structuring detection |
+| [reporting-data-quality-validation-pipeline/](reporting-data-quality-validation-pipeline/) | DQ pipeline — 79.8% → 91.9% score, 10K-row before/after Excel scorecard |
+| [advisor-incentive-performance-dashboard/](advisor-incentive-performance-dashboard/) | PolicyBazaar — 6-month advisor incentive tracking, DAX, star-schema model |
+
+### AI Business Reporting
+| Folder | Description |
+|--------|-------------|
+| [ai-business-reporting-sentiment/](ai-business-reporting-sentiment/) | LLM + n8n auto-generates business reports and sentiment analysis from data |
+
+### Data Analyst — Product & Campaign Analytics
+| Folder | Description |
+|--------|-------------|
+| [influencer-campaign-tracker/](influencer-campaign-tracker/) | Reach, engagement, conversions, ROI tracker with AI-driven recommendations |
+| [fintech-user-funnel-analytics/](fintech-user-funnel-analytics/) | Youth fintech app funnel drop-off analysis with product recommendations |
+| [ab-test-significance-pipeline/](ab-test-significance-pipeline/) | A/B test significance pipeline — chi-square, t-test, automated reporting |
+| [ZEPTO-VS-BLINKIT/](ZEPTO-VS-BLINKIT/) | Competitive pricing & promotion benchmarking across 5K+ SKUs |
+
+### Data Analyst — Statistical & Fraud Analytics
+| Folder | Description |
+|--------|-------------|
+| [HR-ANALYTICS/](HR-ANALYTICS/) | Employee segmentation and attrition analysis — 8,950 records, Tableau |
+| [indian-salary-gap-analysis/](indian-salary-gap-analysis/) | Gender pay-gap analysis — hypothesis testing, Power BI |
+| [upi-fraud-analysis/](upi-fraud-analysis/) | Anomaly detection on 15K+ UPI transactions — SQL window functions, risk signals |
+| [8-Week-SQL-Challenge/](8-Week-SQL-Challenge/) | 8 real-world SQL case studies — CTEs, window functions, cohort analysis |
+
+---
+
+
 > I build MIS dashboards and data pipelines that operations and compliance teams can actually use — multi-sheet Excel workbooks driven entirely by live formulas (XLOOKUP, nested IF, SUMIFS, COUNTIFS), Python data quality pipelines with before/after audit trails, and structured reporting frameworks designed to surface anomalies before they become incidents.
 >
 > This page is a curated showcase. Every project links to its full source repo.

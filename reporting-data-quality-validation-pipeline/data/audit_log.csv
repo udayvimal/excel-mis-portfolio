@@ -1,0 +1,8 @@
+Rule,Before_Count,After_Count,Records_Affected,Note
+Remove duplicate records,10000,9660,340,Kept first occurrence of each duplicate set
+Standardize date formats,500,0,500,Parsed 4 non-standard formats; converted to YYYY-MM-DD
+Standardize channel labels,400,0,400,Normalized case/punctuation variants to canonical labels (UPI/NEFT/Card/Cash/IMPS/Net Banking)
+Flag missing Amount,450,450,0,Flagged (not removed) — requires source-system reconciliation
+Flag missing Customer_ID,200,200,0,Flagged — anonymous transactions require manual attribution
+Flag negative amounts,50,50,0,Flagged as outliers — may be reversals; requires accounting review
+Flag orphaned Customer_ID foreign keys,80,80,0,Customer_IDs not found in customer master — requires customer onboarding verification

@@ -1,0 +1,13 @@
+warehouse/
+metastore_db/
+spark-warehouse/
+derby.log
+*.log
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+venv/
+.venv/
+.DS_Store
+Thumbs.db

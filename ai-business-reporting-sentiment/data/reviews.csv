@@ -1,0 +1,41 @@
+review_id,product,sentiment_label,review_text
+1,Whey Protein Shake 1kg,positive,Amazing product! Mixability is great and the chocolate flavour is not too sweet. Noticed muscle recovery improvement within 2 weeks. Will definitely reorder.
+2,Glow Face Serum 30ml,positive,My skin has never looked this good. After 3 weeks the dark spots are visibly lighter. Packaging is elegant too. Worth every rupee.
+3,Yoga Mat Premium 6mm,positive,"Perfect thickness, non-slip grip even during hot yoga. My old mat used to slide everywhere. This is a game changer for my practice."
+4,Sleep Gummies Melatonin 60ct,positive,Finally sleeping through the night! Tastes like berries and actually works within 30 minutes. No groggy feeling the next morning.
+5,Resistance Bands Set 5-pack,positive,Great quality for the price. The bands don't snap or roll up mid-workout. All 5 resistance levels are genuinely useful.
+6,Lavender Essential Oil 15ml,positive,"Smells exactly like real lavender, not artificial. A few drops in my diffuser and the whole room is calming. Will buy again."
+7,Vitamin C Effervescent 60ct,positive,"Love the orange flavour. Dissolves in 30 seconds, no residue. I've been taking it daily and my energy levels feel noticeably better."
+8,Natural Body Lotion 200ml,positive,"Light, absorbs quickly, no greasy feeling. My dry elbows are completely healed after 10 days of use. Lovely subtle scent too."
+9,Collagen Powder 300g,positive,Mixes well into my morning coffee and has no weird taste. Skin feels more plump. Too early to judge nails but optimistic so far.
+10,Bamboo Diffuser + 2 Oils,positive,"Beautiful diffuser, looks premium, whisper quiet. The oils that came with it are genuinely good quality. Perfect gift idea."
+11,Foam Roller Deep Tissue,positive,"Exactly what I needed post leg-day. The ridges hit the right spots. Feels durable and high-density, not hollow like cheap rollers."
+12,Rose Water Toner 150ml,positive,"Refreshing! I use it morning and night and my skin barrier has improved noticeably. No alcohol, no irritation. Repurchased twice."
+13,Hydrating Lip Balm SPF30,positive,Finally a lip balm that actually moisturises and has SPF. Doesn't leave a white cast. Carrying it everywhere now.
+14,Omega-3 Fish Oil 90 Caps,positive,No fishy aftertaste which was my main concern. Easy to swallow capsule. Joints feel better after 3 weeks of use.
+15,Adjustable Dumbbells 10kg Pair,positive,Build quality is excellent. The adjustment mechanism is smooth and secure. Saved so much space compared to a full rack.
+16,Herbal Immunity Kadha 500ml,positive,"Tastes exactly like homemade kadha, not watered down. I drink it when I feel a cold coming and it helps every time."
+17,Whey Protein Shake 1kg,negative,Clumpy even with a blender bottle. Took 2 weeks to arrive and the seal was broken. Customer support hasn't responded in 4 days. Very disappointing.
+18,Glow Face Serum 30ml,negative,Broke me out badly within 3 days. Checked ingredients and it has a fragrance I'm allergic to — not mentioned clearly on the listing. Returned it.
+19,Yoga Mat Premium 6mm,negative,"Starts slipping after 20 minutes of sweating. The 'non-slip' claim is completely false for hot workouts. Returned, very disappointed."
+20,Sleep Gummies Melatonin 60ct,negative,No effect at all even after 2 weeks. I took 2 gummies as instructed and still couldn't sleep. Feel like I wasted ₹500. Not reordering.
+21,Resistance Bands Set 5-pack,negative,The heaviest band snapped during my first use. Nearly hit my face. This is a safety hazard. Demanded a full refund.
+22,Adjustable Dumbbells 10kg Pair,negative,One side arrived cracked. The replacement took 3 weeks and that one had a loose adjustment dial. Quality control is clearly very poor.
+23,Natural Body Lotion 200ml,negative,"The pump dispenser broke after 2 uses, now I have to unscrew the cap every time. The lotion itself is fine but the packaging is terrible."
+24,Collagen Powder 300g,negative,"Tastes awful — chalky and leaves a bitter aftertaste in coffee. Tried mixing with smoothie, still undrinkable. Would not recommend."
+25,Bamboo Diffuser + 2 Oils,negative,Stopped working after 10 days. The LED ring just went out. Customer support offered a 20% discount on next order instead of a replacement. Unacceptable.
+26,Herbal Immunity Kadha 500ml,negative,"The bottle leaked in transit, arrived half-empty. No response from support after 5 days. Paid for 500ml, received maybe 200ml. Fraud."
+27,Hydrating Lip Balm SPF30,negative,Leaves a white cast that looks terrible on darker skin tones. Wish the product page had shown this. Packaging is also very cheap for the price.
+28,Vitamin C Effervescent 60ct,negative,"Received an expired batch — expiry was 2 months ago. This is a health product, this is unacceptable. Please check your inventory management."
+29,Whey Protein Shake 1kg,neutral,Decent product. Does what it says on the label. Delivery was on time. I've had better tasting proteins but this is good value for money.
+30,Glow Face Serum 30ml,neutral,"It's okay. No irritation and the texture is nice, but I haven't seen dramatic results after 3 weeks. Maybe needs longer. Packaging could be improved."
+31,Yoga Mat Premium 6mm,neutral,Average mat. Good for light yoga but starts slipping a bit in intense sessions. For the price I expected better non-slip technology.
+32,Resistance Bands Set 5-pack,neutral,"Fine for beginners. The lightest two bands are useful, the heaviest three feel identical to me. Instructions would have been helpful."
+33,Omega-3 Fish Oil 90 Caps,neutral,Too early to say if it works. No negative effects after a week. Capsule size is on the larger side but manageable. Will update after a month.
+34,Lavender Essential Oil 15ml,neutral,Decent quality oil. The scent is authentic but fades quite fast in my diffuser. Expected it to last longer. Delivery was prompt though.
+35,Foam Roller Deep Tissue,neutral,"Does the job. A bit lighter than I expected, not sure how long it will last with daily use. No major complaints, just not 'wow'."
+36,Sleep Gummies Melatonin 60ct,neutral,"Works sometimes, not others. The taste is nice. Hard to tell if it's the gummies or just placebo at this point. Will give it another week."
+37,Rose Water Toner 150ml,neutral,Nice scent and feels refreshing but I can't say my skin looks dramatically different after 2 weeks. Maybe I'm using it wrong.
+38,Collagen Powder 300g,neutral,No strong taste which is good. Mixing is fine. Too early to see skin results. Would be helpful if the brand shared more evidence/studies.
+39,Herbal Immunity Kadha 500ml,neutral,Average for the price. Tastes herbal but not as strong as I wanted. Did seem to help when I had a cold but hard to be sure.
+40,Natural Body Lotion 200ml,neutral,Texture is nice but the fragrance is stronger than I prefer. Skin does feel softer. Nothing revolutionary but a decent everyday lotion.
